@@ -9,15 +9,12 @@ import { ModeToggle } from "./nav-theme-togller";
 export const Navbar = () => {
   const [isMenu, setMenu] = useState(false);
   return (
-    <header className="bloack realtive max-w-350 w-full backdrop-blur-[backdrop-filter]:bg-backgroound/60 py-4 md:px-8 px-4 mx-auto sticky bg-background/60 top-0 z-10 ">
-      <nav className="flex items-center justify-between">
+    <nav className="bloack max-md:realtive w-full backdrop-blur-[backdrop-filter]:bg-backgroound/30 py-4 md:px-8 px-4 mx-auto bg-background/30 top-0 z-20 sticky ">
+      <div className="flex items-center justify-between w-full max-w-350 mx-auto">
         <Logo />
         <NavDesktop className={`${isMenu ? "max-md:hidden" : "max-md:flex"}`} />
         <div className="flex items-center justify-end md:gap-4 gap-2">
           <ModeToggle />
-          <button className="max-md:hidden">
-            <Search size={18} />
-          </button>
           <Button size="sm">Signup</Button>
           <Button
             size="sm"
@@ -28,7 +25,7 @@ export const Navbar = () => {
             {isMenu ? <Menu size={18} /> : <X size={18} />}
           </Button>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 };
