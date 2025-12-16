@@ -1,31 +1,10 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { TextEffect } from "@/components/ui/text-effect";
-import { AnimatedGroup } from "@/components/ui/animated-group";
 import { NeueMachina } from "../fonts";
+import { HeroTransitionView } from "./hero-transition-view";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
-
-import CodeEditorStaticDemo from "../ui/code-editor";
-
-const transitionVariants = {
-  item: {
-    hidden: {
-      opacity: 0,
-      filter: "blur(12px)",
-      y: 12,
-    },
-    visible: {
-      opacity: 1,
-      filter: "blur(0px)",
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.3,
-        duration: 1.5,
-      },
-    },
-  },
-};
+import { TextEffect } from "@/components/ui/text-effect";
+import { HeroCodeEditorDemo } from "./hero-code-editor";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -43,29 +22,19 @@ export function HeroSection() {
       <section className="relative min-h-screen">
         <div className="absolute inset-0 -z-10 [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]" />
 
-        <div className="pt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl">
+        <div className="pt-24 flex items-center justify-between max-w-7xl">
           {/* LEFT CONTENT */}
           <div>
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.05,
-                      delayChildren: 0.75,
-                    },
-                  },
-                },
-                ...transitionVariants,
-              }}
-            >
+            {/* Tagline */}
+            <HeroTransitionView staggered={0.05} delay={0.75}>
               <div className="inline-flex rounded-full border bg-neutral-100 dark:bg-neutral-900 px-4 py-1">
                 <AnimatedShinyText className="text-sm">
                   ✨ Where Potential Meets Professionalism
                 </AnimatedShinyText>
               </div>
-            </AnimatedGroup>
+            </HeroTransitionView>
 
+            {/* Hero Text */}
             <div
               className={`mt-8 text-5xl md:text-6xl font-medium flex flex-wrap gap-2 ${NeueMachina.className}`}
             >
@@ -104,15 +73,10 @@ export function HeroSection() {
               designed to turn beginners into job-ready developers.
             </TextEffect>
 
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: { staggerChildren: 0.75, delayChildren: 0.95 },
-                  },
-                },
-                ...transitionVariants,
-              }}
+            {/* Buttons */}
+            <HeroTransitionView
+              staggered={0.05}
+              delay={0.75}
               className="mt-12 flex items-center gap-3"
             >
               <Button
@@ -120,7 +84,7 @@ export function HeroSection() {
                 size="lg"
                 className="text-primary bg-blue-400 hover:bg-blue-500"
               >
-                <Link href="#link">Get started</Link>
+                <Link href="/courses">Get started</Link>
               </Button>
               <Button
                 asChild
@@ -128,27 +92,16 @@ export function HeroSection() {
                 variant="secondary"
                 className="text-primary"
               >
-                <Link href="#link">View demo</Link>
+                <Link href="/free-tutorials">View demo</Link>
               </Button>
-            </AnimatedGroup>
+            </HeroTransitionView>
           </div>
 
+          {/* RIGHT CONTENT */}
           <div>
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.08,
-                      delayChildren: 1,
-                    },
-                  },
-                },
-                ...transitionVariants,
-              }}
-            >
-              <CodeEditorStaticDemo />
-            </AnimatedGroup>
+            <HeroTransitionView staggered={0.08} delay={1}>
+              <HeroCodeEditorDemo />
+            </HeroTransitionView>
           </div>
         </div>
       </section>
