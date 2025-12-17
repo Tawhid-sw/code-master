@@ -1,5 +1,3 @@
-import { Logo } from "@/components/Logo";
-// import { Hero } from "@/components/Hero";
 import { HeroSection } from "@/components/Hero";
 import { InfinitBrands } from "@/components/InfinitBrands";
 

@@ -54,33 +54,11 @@
       background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
-  @keyframes orbit-spin {
-    from {
-      transform: rotate(0deg);
-    }
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+  @keyframes scroll {
     to {
-      transform: rotate(360deg);
-    }
-  }
-  --animate-orbit: orbit calc(var(--duration) * 10s) linear infinite;
-  @keyframes orbit {
-    0% {
-      transform: rotate(calc(var(--angle) * 1deg))
-        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
-    }
-    100% {
-      transform: rotate(calc(var(--angle) * 1deg + 360deg))
-        translateY(calc(var(--radius) * 1px))
-        rotate(calc((var(--angle) * -1deg) - 360deg));
-    }
-  }
-  --animate-infinite-scroll: infinite-scroll 80s linear infinite;
-  @keyframes infinite-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
+      transform: translate(calc(-50% - 0.5rem));
     }
   }
 }
@@ -163,5 +141,14 @@
   }
   button {
     @apply transition-all ease-in-out active:scale-90 cursor-pointer;
+  }
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
   }
 }
