@@ -120,8 +120,8 @@ function AnimatedGroup({
     variants?.item ?? (preset ? presetVariants[preset] : undefined)
   );
 
-  const MotionComponent = motion(As);
-  const MotionChild = motion(ChildAs);
+  const MotionComponent = motion.create(As);
+  const MotionChild = motion.create(ChildAs);
 
   return (
     <MotionComponent

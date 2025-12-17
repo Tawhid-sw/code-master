@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { NeueMachina } from "../fonts";
 import { cn } from "@/lib/utils";
 
-export const NavDesktop = ({ className }: { className?: string }) => {
+export const NavNavigations = ({ className }: { className?: string }) => {
   const pathname = usePathname();
   return (
     <ul

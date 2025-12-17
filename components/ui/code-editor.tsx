@@ -198,9 +198,9 @@ export function CodeEditor({
       {/* Code Area */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto py-4 text-[13px] font-mono leading-relaxed"
+        className="flex-1 overflow-y-auto py-4 font-mono leading-relaxed"
       >
-        <div className="px-4">
+        <div className="lg:px-4 sm:px-8 px-2">
           <div
             ref={containerRef}
             className={cn(
