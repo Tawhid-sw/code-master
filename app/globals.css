@@ -74,6 +74,15 @@
         rotate(calc((var(--angle) * -1deg) - 360deg));
     }
   }
+  --animate-infinite-scroll: infinite-scroll 80s linear infinite;
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 :root {

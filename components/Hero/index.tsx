@@ -19,7 +19,7 @@ export function HeroSection() {
         <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
       </div>
 
-      <section className="relative min-h-screen lg:px-8 sm:px-4 px-2">
+      <section className="relative min-h-fit lg:px-8 sm:px-4 px-2 mb-8">
         <div className="absolute inset-0 -z-10 [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]" />
 
         <div className="lg:pt-24 pt-10 flex items-center lg:justify-between justify-center lg:gap-4 gap-16 max-lg:flex-col max-w-7xl">
